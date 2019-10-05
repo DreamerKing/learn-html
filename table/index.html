@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table</title>
+</head>
+
+<body>
+    <table>
+        <caption>表格</caption>
+        <colgroup>
+            <col>
+            <col style="background-color: yellow" span="2">
+        </colgroup>
+
+        <tbody>
+            <tr>
+                <th scope="row">Calcutta</th>
+                <td rowspan="2">Orange</td>
+                <th id="header">Orange3</td>
+            </tr>
+            <tr>
+                <td headers="data1">Robots</td>
+                <td colspan="2" headers="header">Jazz</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td>这是总结</td>
+        </tfoot>
+        <thead>
+            <tr>
+                <th scope="col" id="data1">Data 1</th>
+                <th scope="col">Data 2</th>
+                <th scope="col">Data 3</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iframe</title>
+</head>
+<body>
+    <iframe src="http://localhost:5000/a.html" id="iframe" name="aiframe" sandbox="allow-popups allow-modals allow-forms allow-scripts allow-same-origin"></iframe>  
+    <script>
+     /*    let oldDoc = iframe.contentDocument;
+        iframe.onload = function(){
+            let iframeWindow = iframe.contentWindow;
+            try {
+                let doc = iframe.contentDocument;
+               console.log(oldDoc == doc);
+               
+            } catch (e) {
+              console.log(e);
+            }
+
+             try {
+                console.log(iframe.contentWindow.location);
+            } catch (e) {
+                console.log(e);
+            }
+
+         //  iframe.contentWindow.location = '/';
+         //   iframe.onload = null;
+        } */
+
+/*         let oldDoc = iframe.contentDocument;
+        let timer = setInterval(() => {
+            if(iframe.contentDocument == oldDoc){
+                return;
+            }
+            iframe.contentDocument.addEventListener('DOMContentLoaded', () => {
+                iframe.contentDocument.body.prepend('Hello, world!');
+            });
+            clearInterval(timer);
+        }, 100); */
+
+       /*  console.log(iframe.contentWindow == frames[0]);
+        console.log(iframe.contentWindow == frames.aiframe);
+        console.log(window.frames[0].parent === window);
+        console.log(window.frames); */
+
+        // if(window == top){
+        //     console.log(" not i frame");
+        // }
+        window.frames.aiframe.postMessage("message from index.html", "*");
+        
+    </script>
+</body>
+</html>

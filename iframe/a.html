@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A page</title>
+</head>
+<body>
+    <p>A page</p>  
+    <iframe src="http://localhost:5000/b.html" sandbox="allow-modals allow-scripts"></iframe> 
+    <script>
+    console.log("a.html");
+   /*  if (window == top) { // current window == window.top?
+            alert('The script is in the topmost window, not in a frame');
+        } else {
+            alert('The script runs in a frame!');
+        } */
+
+         window.addEventListener("message", function (event) {
+                console.log(event);
+                if (event.origin !== "http://localhost:5000") {
+                    return;
+                };
+                console.log("received:", event.data);
+            })
+
+    </script>  
+</body>
+</html>

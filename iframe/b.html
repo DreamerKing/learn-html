@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>b Page</title>
+</head>
+<body>
+    <p>b Page</p>
+    <script>
+    console.log("b.html");
+    window.addEventListener("message", function(event){
+        console.log(event);
+        if(event.origin !== "http://localhost:5000"){
+            return;
+        };
+        console.log("received:",event.data); 
+    })
+
+    </script>  
+</body>
+</html>
